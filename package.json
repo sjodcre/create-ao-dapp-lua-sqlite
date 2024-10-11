@@ -1,0 +1,25 @@
+{
+  "name": "lua-sqlite",
+  "type": "module",
+  "scripts": {
+    "lua-sqlite:deploy": "cd ./ao/lua-sqlite && ./scripts/deploy.sh",
+    "lua-sqlite:test": "cd ./ao/lua-sqlite && ./scripts/test.sh",
+    "lua-sqlite:build": "cd ./ao/lua-sqlite && ./scripts/build.sh",
+    "lua-sqlite:inject": "STATE_FILE=./ao/lua-sqlite/state-processes.yaml node ./utils/inject-process.js",
+    "frontend:dev": "cd ./apps/frontend && npm run dev",
+    "frontend:build": "cd ./apps/frontend && npm run build",
+    "frontend:deploy": "cd ./apps/frontend && npm run deploy"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "aoform": "latest",
+    "yaml": "^2.4.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "ao/*"
+  ]
+}
