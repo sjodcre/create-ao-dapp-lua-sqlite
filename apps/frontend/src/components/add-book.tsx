@@ -1,7 +1,7 @@
 import { createDataItemSigner, message, result } from "@permaweb/aoconnect";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React from "react";
-import { BOOKS } from "../constants/books_process";
+import { LUASQLITE } from "../constants/lua-sqlite_process";
 
 export default function AddBook() {
   const queryClient = useQueryClient();
@@ -18,7 +18,7 @@ export default function AddBook() {
       Author: string;
     }) => {
       const messageId = await message({
-        process: BOOKS,
+        process: LUASQLITE,
         tags: [
           {
             name: "Action",
@@ -30,7 +30,7 @@ export default function AddBook() {
       });
 
       const messageResult = await result({
-        process: BOOKS,
+        process: LUASQLITE,
         message: messageId,
       });
 

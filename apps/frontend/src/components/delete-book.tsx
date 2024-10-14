@@ -1,7 +1,7 @@
 import { createDataItemSigner, message, result } from "@permaweb/aoconnect";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React from "react";
-import { BOOKS } from "../constants/books_process";
+import { LUASQLITE } from "../constants/lua-sqlite_process";
 
 type Book = {
   Id: number;
@@ -16,7 +16,7 @@ export default function DeleteBook({ book }: { book: Book }) {
     mutationKey: ["Delete-Book"],
     mutationFn: async ({ Id }: { Id: number }) => {
       const messageId = await message({
-        process: BOOKS,
+        process: LUASQLITE,
         tags: [
           {
             name: "Action",
@@ -28,7 +28,7 @@ export default function DeleteBook({ book }: { book: Book }) {
       });
 
       const messageResult = await result({
-        process: BOOKS,
+        process: LUASQLITE,
         message: messageId,
       });
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import DeleteBook from "./delete-book";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createDataItemSigner, message, result } from "@permaweb/aoconnect";
-import { BOOKS } from "../constants/books_process";
+import { LUASQLITE } from "../constants/lua-sqlite_process";
 
 type Book = {
   Id: number;
@@ -21,7 +21,7 @@ export default function BookRow({ book }: { book: Book }) {
     mutationKey: ["Update-Book", book.Id],
     mutationFn: async () => {
       const messageId = await message({
-        process: BOOKS,
+        process: LUASQLITE,
         tags: [
           {
             name: "Action",
@@ -37,7 +37,7 @@ export default function BookRow({ book }: { book: Book }) {
       });
 
       const messageResult = await result({
-        process: BOOKS,
+        process: LUASQLITE,
         message: messageId,
       });
 

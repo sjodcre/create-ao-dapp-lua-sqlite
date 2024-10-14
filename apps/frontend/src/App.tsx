@@ -1,6 +1,6 @@
 import { ConnectButton } from "arweave-wallet-kit";
 import "./App.css";
-import { BOOKS } from "./constants/books_process";
+import { LUASQLITE } from "./constants/lua-sqlite_process";
 import aoLogo from "/ao.svg";
 import reactLogo from "/react.svg";
 import viteLogo from "/vite.svg";
@@ -24,11 +24,11 @@ function App() {
       <p className="read-the-docs">
         AO Books Process:{" "}
         <a
-          href={`https://www.ao.link/#/entity/${BOOKS}`}
+          href={`https://www.ao.link/#/entity/${LUASQLITE}`}
           target="_blank"
           rel="noreferrer"
         >
-          {BOOKS}
+          {LUASQLITE}
         </a>
       </p>
       <div className="card">

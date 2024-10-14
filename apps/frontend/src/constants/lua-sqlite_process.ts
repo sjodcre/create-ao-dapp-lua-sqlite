@@ -1,0 +1,1 @@
+export const LUASQLITE = "HYshQa5zZcMwEnAP7ZJrHN64TgWw2h7zNQUuVq7mcOw";

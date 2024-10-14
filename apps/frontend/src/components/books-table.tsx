@@ -1,6 +1,6 @@
 import { dryrun } from "@permaweb/aoconnect";
 import { useQuery } from "@tanstack/react-query";
-import { BOOKS } from "../constants/books_process";
+import { LUASQLITE } from "../constants/lua-sqlite_process";
 
 import BookRow from "./book-row";
 
@@ -20,7 +20,7 @@ export default function BooksTable() {
     queryKey: ["Get-Books"],
     queryFn: async () => {
       const dryrunResult = await dryrun({
-        process: BOOKS,
+        process: LUASQLITE,
         tags: [
           {
             name: "Action",
